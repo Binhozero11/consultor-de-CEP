@@ -66,30 +66,65 @@ function errorMessage(msg) {
     res.innerHTML= `<span class="message-error">${msg}</span>`
 }
 
+function okMessage(msg) {
+    res.innerHTML= 
+    `
+        <span>
+            <ul class="message-ok">${msg}</ul>
+        </span>
+    `
+}
+
 form.addEventListener("submit", async function(e) {
+
     try {
     e.preventDefault()
     button.disabled = true;
-
-    
-
     const cepDigitado = e.target.cep.value;
     const validaCep = /^[0-9]{8}$/
+
+
+
+
     const isValido = validaCep.test(cepDigitado)
     res.innerHTML = ''
     if (!isValido) {
         errorMessage("CEP inválido")
         return;
     }
+   
+    const value = cepDigitado.replace(/\D/g, '');
+
+
+    res.classList.add("spinner-border")
+    const resultado = await consultarCep(value)
+    console.log(resultado);
+    if(resultado==undefined) {
+        errorMessage(`Não conseguimos encontrar nenhuma informação com CEP ${cepDigitado} informado`)
+        return
+    }
+    const uri = new URLSearchParams();
+    uri.append("query", `${resultado.logradouro},${resultado.localidade}` )
+   
+
+
+    const url = `https://www.google.com/maps/search/?api=1&${uri.toString()}`
+
+    okMessage(
+    `
+        <li>Local: <strong>${resultado.localidade.length > 0 ? resultado.localidade : "..."}</strong></li>
+        <li>DDD: <strong>${resultado.ddd.length > 0 ? resultado.ddd : "..."}</strong></li>
+        <li>Bairro: <strong>${resultado.bairro.length > 0 ? resultado.bairro : "..."}</strong></li>
+        <li>Ibge: <strong>${resultado.ibge.length > 0 ? resultado.ibge : "..."}</strong></li>
+        <li>Complemento: <strong>${resultado.complemento.length > 0 ? resultado.complemento : "..."}</strong></li>
+        <li>Logradouro: <strong>${resultado.logradouro.length > 0 ? resultado.logradouro : "..."}</strong></li>
+        <li>Uf: <strong>${resultado.uf.length > 0 ? resultado.uf : "..."}</strong></li>
+        ${resultado.localidade.length>0 ? `    <li>
+        <a target="_blank" href="${url}">Veja no mapa</a>
+    </li>` : "" }
     
-        res.classList.add("spinner-border")
-        const resultado = await consultarCep(cepDigitado)
-        if(resultado==undefined) {
-            errorMessage(`Não conseguimos encontrar nenhuma informação com CEP ${cepDigitado} infromado`)
-            return
-        }
-        console.log(resultado);
-        res.innerHTML = resultado.localidade
+    `
+    )
 
 
     }catch(e){
