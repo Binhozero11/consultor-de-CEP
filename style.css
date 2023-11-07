@@ -1,0 +1,61 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(2, 63, 63, 0.808);
+}
+
+header {
+    height: 100px;
+    background-color: rgba(18, 99, 99, 0.774);
+}
+
+main {
+    background-color: rgb(53, 165, 128);
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+main form {
+    display: flex;
+}
+
+main form input {
+    height: 100%;
+    padding: 10px;
+    width: 300px;
+    border: none;
+    background-color: rgba(175, 169, 169, 0.678);
+}
+
+main form input:focus-visible {
+    outline: none;
+}
+
+main form button {
+    border: none;
+    height: 100%;
+    width: 35px;
+    background-color: gray;
+    text-align: center;
+}
+
+main form button i {
+    height: 100%;
+    line-height: 40px;
+}
+
+.message-error {
+    background-color: red;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px black;
+}
