@@ -63,6 +63,23 @@ main form button i {
     line-height: 20px;
 }
 
+section {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+section div#historico p{
+    border: 1px solid black;
+    border-radius: 40px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+section div#historico p:hover, section div#historico p:focus {
+    background-color: rgb(53, 165, 128);
+}
+
 span {
     display: flex;
     justify-content: center;
