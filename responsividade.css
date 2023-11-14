@@ -1,0 +1,47 @@
+@media(max-width:450px){
+    header {
+        height: 70px;
+    }
+    
+    header h2 {
+        margin-left: 50px;
+        line-height: 70px;
+    }
+    
+    main {
+        height: auto;
+        gap: 30px;
+    }
+    
+    main form input {
+        height: 30px;
+        width: 280px;
+    }
+    
+    main form button {
+        height: 30px;
+    }
+    
+    .message-error {
+        background-color: red;
+        color: white;
+        padding: 8px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px 1px black;
+    }
+    .message-ok {
+        width: 400px;
+        text-align: center;
+        margin: auto;
+        font-size: 1.3em;
+        letter-spacing: 1px;
+        font-family: Arial, Helvetica, sans-serif;
+        list-style: none;
+        background-color: rgba(2, 63, 63, 0.808);
+        color: black;
+        padding: 8px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px 1px black;
+        margin-bottom: 20px;
+    }
+}
