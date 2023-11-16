@@ -1,25 +1,73 @@
+@media(max-width: 720px) {    
+    
+    header {
+        height: 80px;
+    }
+    
+    header h2 {
+        margin-left: 60px;
+        line-height: 80px;
+    }
+    
+    main form input {
+        height: 35px;
+        padding: 8px;
+    }
+    
+    main form button {
+        height: 35px;
+    }
+    
+    main div#resultado.spinner-border {
+        margin-bottom: 30px;
+    }
+    
+    section div#historico p{
+        padding: 4px;
+        font-size: 0.9em;
+    }
+    
+    .message-error {
+        padding: 6px;
+        font-size: 1em;
+        margin: 20px 10px;
+        margin-top: 0;
+    }
+    .message-ok {
+        width: 300px;
+        font-size: 1.2em;
+    }
+}
+
 @media(max-width:450px){
     header {
         height: 70px;
     }
     
     header h2 {
-        margin-left: 50px;
+        margin-left: 30px;
         line-height: 70px;
     }
     
     main {
-        height: auto;
         gap: 30px;
     }
     
     main form input {
         height: 30px;
-        width: 280px;
+        width: 260px;
+        margin-left: 20px;
     }
     
     main form button {
         height: 30px;
+        width: 26px;
+        margin-right: 20px;
+    }
+    
+    section div#historico p{
+        padding: 5px;
+        font-size: 0.8em;
     }
     
     .message-error {
@@ -30,18 +78,8 @@
         box-shadow: 1px 1px 1px 1px black;
     }
     .message-ok {
-        width: 400px;
-        text-align: center;
-        margin: auto;
-        font-size: 1.3em;
-        letter-spacing: 1px;
-        font-family: Arial, Helvetica, sans-serif;
-        list-style: none;
-        background-color: rgba(2, 63, 63, 0.808);
-        color: black;
-        padding: 8px;
-        border-radius: 5px;
-        box-shadow: 1px 1px 1px 1px black;
-        margin-bottom: 20px;
+        width: auto;
+        font-size: 1.1em;
+        margin: 20px 20px;
     }
 }

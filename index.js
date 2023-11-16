@@ -97,7 +97,7 @@ function meusUltimosCepConsultados() {
 function errorMessage(msg) {
     res.innerHTML =
         `
-        <span>
+        <span style="text-align: center;">
             <div class="message-error">${msg}</div>
         </span>
     `
@@ -148,7 +148,7 @@ function consultaCepNoStorage(valor){
 } 
 
 function cepValido(cep){
-    const validaCep = /^[0-9]{8}$/
+    const validaCep = /(^[0-9]{5}-[\d]{3})$|(^[0-9]{8})$/
     const isValido = validaCep.test(cep)
     return isValido
 }
@@ -180,7 +180,7 @@ form.addEventListener("submit", async function (e) {
 
     
         if (!isValido) {
-            errorMessage("CEP inválido")
+            errorMessage("CEP inválido. </br>Ex: 46500-000 ou 46500000")
             return;
         }
 
@@ -189,7 +189,7 @@ form.addEventListener("submit", async function (e) {
         const ultimoCepConsultado=  consultaCepNoStorage(value)
         
         if (ultimoCepConsultado!=undefined) {
-           
+            tratadorCep(ultimoCepConsultado)
             salvarCepConsultado(ultimoCepConsultado)
             return;
         }

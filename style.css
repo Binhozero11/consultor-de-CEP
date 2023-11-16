@@ -5,12 +5,13 @@
 }
 
 body {
-    background-color: rgba(2, 63, 63, 0.808);
+    background-color: #77BBA4;
 }
 
 header {
     height: 100px;
-    background-color: rgba(18, 99, 99, 0.774);
+    background-color: #9DF5B9;
+    border-bottom: #193d31;
 }
 
 header h2 {
@@ -20,11 +21,12 @@ header h2 {
 }
 
 main {
-    background-color: rgb(53, 165, 128);
+    background-color: #9DF4F5;
     height: auto;
     display: flex;
     flex-direction: column;
     gap: 50px;
+    margin-top: 2px;
 }
 
 main h1 {
@@ -39,11 +41,11 @@ main form {
 }
 
 main form input {
-    height: 40px;
+    height: 45px;
     padding: 10px;
     width: 300px;
     border: none;
-    background-color: rgba(175, 169, 169, 0.678);
+    background-color: #77B9A1;
 }
 
 main form input:focus-visible {
@@ -52,15 +54,23 @@ main form input:focus-visible {
 
 main form button {
     border: none;
-    height: 40px;
-    width: 30px;
-    background-color: gray;
+    height: 45px;
+    width: 35px;
+    background-color: #538170;
     text-align: center;
 }
 
 main form button i {
     height: 35px;
     line-height: 20px;
+}
+
+main div#resultado {
+    margin: 0 auto;
+}
+
+main div#resultado.spinner-border {
+    margin-bottom: 30px;
 }
 
 section {
@@ -78,6 +88,7 @@ section div#historico p{
 
 section div#historico p:hover, section div#historico p:focus {
     background-color: rgb(53, 165, 128);
+    transform: scale(1.03);
 }
 
 span {
