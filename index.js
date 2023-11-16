@@ -197,7 +197,7 @@ form.addEventListener("submit", async function (e) {
         const resultado = await consultarCep(value)
 
         if (resultado == undefined) {
-            errorMessage(`Não conseguimos encontrar nenhuma informação com o CEP ${cepDigitado} informado`)
+            errorMessage(`Não conseguimos encontrar nenhuma informação com o CEP "${cepDigitado}" informado`)
             return
         }
 
