@@ -5,28 +5,23 @@
 }
 
 body {
-    background-color: #77BBA4;
+    background-color: #bfd0c9;
+    color: #161d1b;
 }
 
 header {
     height: 100px;
-    background-color: #9DF5B9;
+    background-color: #719085;
     border-bottom: #193d31;
-}
-
-header h2 {
-    height: 100%;
-    margin-left: 80px;
-    line-height: 90px;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
 }
 
 main {
-    background-color: #9DF4F5;
-    height: auto;
     display: flex;
     flex-direction: column;
     gap: 50px;
-    margin-top: 2px;
 }
 
 main h1 {
@@ -45,18 +40,22 @@ main form input {
     padding: 10px;
     width: 300px;
     border: none;
-    background-color: #77B9A1;
+    background-color: #dfe8e4;
+    color: #719085;
 }
 
 main form input:focus-visible {
     outline: none;
+    border: 1px solid #57756b;
+    color: #161d1b;
 }
 
 main form button {
     border: none;
     height: 45px;
     width: 35px;
-    background-color: #538170;
+    background-color: #2b3633;
+    color: #dfe8e4;
     text-align: center;
 }
 
@@ -79,22 +78,27 @@ section {
     margin-top: 30px;
 }
 
-section div#historico p{
-    border: 1px solid black;
-    border-radius: 40px;
-    padding: 5px;
-    cursor: pointer;
-}
-
-section div#historico p:hover, section div#historico p:focus {
-    background-color: rgb(53, 165, 128);
-    transform: scale(1.03);
-}
-
-span {
+section div {
     display: flex;
-    justify-content: center;
-    
+    gap: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+
+    background-color: #97b1a7;
+    border-radius: 12px;
+
+    user-select: none;
+
+    transition: all .1s ease-in-out;
+}
+
+section div:hover {
+    opacity: 70%;
+    transform: scale(1.02);
+}
+
+#historico-open {
+    display: none;
 }
 
 .message-error {

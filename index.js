@@ -2,6 +2,7 @@ const form = document.getElementById("form")
 const res = document.getElementById("resultado")
 const button = document.querySelector("button[type='submit']")
 const historico = document.getElementById("historico")
+const historicoOpen = document.getElementById("historico-open")
 
 document.addEventListener('novo_cep_consultado', function () {
     meusUltimosCepConsultados();
@@ -22,7 +23,7 @@ async function consultarCep(cep) {
             if (body === undefined)
                 return undefined
 
-            const { cep, logradouro, complemento, bairro, localidade, uf, ibge, ddd, erro }
+            const { cep, logradouro, complemento, bairro, localidade, uf, estado, regiao, ibge, ddd, erro }
                 = body
 
             if (erro) {
@@ -36,10 +37,12 @@ async function consultarCep(cep) {
             return {
                 cep,
                 logradouro,
-                uf,
                 complemento,
                 bairro,
                 localidade,
+                uf,
+                estado,
+                regiao,
                 ibge,
                 ddd,
             }
@@ -75,7 +78,7 @@ function cepsStorages() {
 
 function meusUltimosCepConsultados() {
     let ceps = cepsStorages()
-    historico.innerHTML = ""
+    historicoOpen.innerHTML = ""
     var index = 0;
     for (const cep of ceps) {
         if (index >= 5) {
@@ -87,7 +90,7 @@ function meusUltimosCepConsultados() {
             tratadorCep(cep)
         })
 
-        historico.appendChild(p)
+        historicoOpen.appendChild(p)
         index++
     }
 

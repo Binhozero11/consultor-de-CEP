@@ -14,20 +14,27 @@
     <header>
         <h2>CEPravocê</h2>
     </header>
+
     <main>
         <h1>Digite o seu CEP</h1>
-        <form id="form">
-            <input id="cep" type="text">
+        <form id="form"> 
+            <input id="cep" type="text" placeholder="Ex: 01000-000">
             <button id="button" aria-label="botão para acessar os resultados" type="submit">
                 <i class="bi bi-search"></i>
             </button>
         </form>
         <div id="resultado"></div>
     </main>
-    <section>
-        <div id="historico"></div>
+
+    <section id="historico">
+        <div>
+            <span>Ver histórico</span>
+            <i class="bi bi-clock-history"></i>
+        </div>
     </section>
-    <footer></footer>
+
+    <div id="historico-open"></div>
+
     <script src="./index.js"></script>
 </body>
 </html>

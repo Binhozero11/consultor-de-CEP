@@ -2,11 +2,8 @@
     
     header {
         height: 80px;
-    }
-    
-    header h2 {
-        margin-left: 60px;
-        line-height: 80px;
+        padding-left: 60px;
+        padding-top: 3px;
     }
     
     main form input {
@@ -20,11 +17,6 @@
     
     main div#resultado.spinner-border {
         margin-bottom: 30px;
-    }
-    
-    section div#historico p{
-        padding: 4px;
-        font-size: 0.9em;
     }
     
     .message-error {
@@ -41,12 +33,7 @@
 
 @media(max-width:450px){
     header {
-        height: 70px;
-    }
-    
-    header h2 {
-        margin-left: 30px;
-        line-height: 70px;
+        padding-left: 30px;
     }
     
     main {
@@ -63,11 +50,6 @@
         height: 30px;
         width: 26px;
         margin-right: 20px;
-    }
-    
-    section div#historico p{
-        padding: 5px;
-        font-size: 0.8em;
     }
     
     .message-error {
